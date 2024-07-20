@@ -1,0 +1,30 @@
+[
+    {
+        "email": "salmasamy22@gmail.com",
+        "password": "4444",
+        "username": "salma samy",
+        "date": "2024-07-20T14:40:33.671763",
+        "role": "user"
+    },
+    {
+        "email": "sohailaswedan45@gmail.com",
+        "password": "55555",
+        "username": "sohailaswedan",
+        "date": "2024-07-20T14:57:07.460796",
+        "role": "admin"
+    },
+    {
+        "email": "rollakaram44@gmail.com",
+        "password": "123456789",
+        "username": "rollakaram",
+        "date": "2024-07-20T17:06:03.755557",
+        "role": "user"
+    },
+    {
+        "email": "yughbhv@fg.com",
+        "password": "333",
+        "username": "sohailaswedan",
+        "date": "2024-07-20T19:30:03.225633",
+        "role": "user"
+    }
+]

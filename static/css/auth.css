@@ -1,0 +1,71 @@
+@import url('/static/css/style.css');
+body
+{
+    background-image: url('/static/images/final.jpg');
+    background-repeat: repeat;
+    background-size: contain;   
+}
+h2
+{
+    color: chocolate;
+    margin: 40px;
+    font-size: 40px;
+}
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.form-container
+{
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    padding: 20px 0;
+}
+#signup-form , #loginForm
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#signup-form input 
+{
+    width: 100%;
+    padding: 15px 85px 15px 10px;
+    margin: 4px;
+    border-radius: 7px;
+}
+#loginForm input
+{
+    width: 100%;
+    padding: 15px 35px 15px 10px;
+    margin: 4px;
+    border-radius: 7px;
+}
+.signup
+{
+    /* padding: 15px 20px 15px 55px ; */
+    text-align: center;
+}
+.login-link
+{
+    background-color: var(--yellow-bg-color);
+    margin: 30px;
+}
+.login-link a
+{
+    color: chocolate;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.login-link
+{
+    margin-bottom: 60px;
+}
+

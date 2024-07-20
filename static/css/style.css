@@ -1,0 +1,31 @@
+:root
+{
+    --main-bg-color:#2C2C2C;
+    --main-text-color:#F2F2F2;
+    --secondary-color:#1E1E1E;
+    --highlight-color:#FF9500;
+    --yellow-bg-color: #FFDA78;
+}
+.btn
+{
+    background-color: #FF9500;
+}
+.movie-image
+{
+    width: 100%;
+}
+.sec1
+{
+    background-image: url('/static/images/final.jpg');
+    height: 90vh;
+}
+#email-displayed
+{
+    color: #F2F2F2;
+    font-size: 50px;
+    margin-top: 150px;
+}
+.delete-account
+{
+    width: 10%;
+}

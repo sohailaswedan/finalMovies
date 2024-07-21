@@ -252,49 +252,103 @@ def add_movie():
 
     return render_template('add.html')
 
-#update movie
+# #update movie
+# @app.route('/update/<movie_id>', methods=["GET", "POST"])
+# def update_movie(movie_id):
+#     with open("movies.json", "r") as json_file:
+#         movies_info = json.load(json_file)
+    
+#     if request.method == "GET":
+#         # Render the update form without pre-filling data
+#         return render_template("update.html",movie_id = movie_id)
+    
+#     elif request.method == "POST":
+#         with open("movies.json", "r") as json_file:
+#             movies_info = json.load(json_file)
+#         # Retrieve form data
+#         updated_thumbnail = request.form['thumbnail']
+#         updated_moviename = request.form['moviename']
+#         updated_description = request.form['description']
+#         updated_rating = float(request.form['rating'])
+        
+#         # Find the movie to update
+#         movie_to_update = None
+#         for movie in movies_info["movies"]:
+#             if int(movie["id"]) == int(movie_id):
+#                 movie_to_update = movie
+#                 break
+        
+#         # If movie is not found
+#         if not movie_to_update:
+#             return jsonify({"message": "Movie not found"}), 404
+        
+#         # Update movie data
+#         movie_to_update['thumbnails'] = updated_thumbnail
+#         movie_to_update['movie_name'] = updated_moviename
+#         movie_to_update['brief_description'] = updated_description
+#         movie_to_update['rating'] = updated_rating
+        
+#         # Save updated data to JSON file
+#         with open("movies.json", "w") as json_file:
+#             json.dump(movies_info, json_file, indent=4)
+#         return redirect(url_for('movies'))  
+        
+#     return redirect(url_for('movies'))
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 @app.route('/update/<movie_id>', methods=["GET", "POST"])
 def update_movie(movie_id):
     with open("movies.json", "r") as json_file:
         movies_info = json.load(json_file)
-    
+
     if request.method == "GET":
-        # Render the update form without pre-filling data
-        return render_template("update.html",movie_id = movie_id)
-    
-    elif request.method == "POST":
-        with open("movies.json", "r") as json_file:
-            movies_info = json.load(json_file)
-        # Retrieve form data
-        updated_thumbnail = request.form['thumbnail']
-        updated_moviename = request.form['moviename']
-        updated_description = request.form['description']
-        updated_rating = float(request.form['rating'])
-        
         # Find the movie to update
         movie_to_update = None
         for movie in movies_info["movies"]:
             if int(movie["id"]) == int(movie_id):
                 movie_to_update = movie
                 break
-        
+
         # If movie is not found
         if not movie_to_update:
             return jsonify({"message": "Movie not found"}), 404
-        
+
+        # Render the update form with pre-filled data
+        return render_template("update.html", movie=movie_to_update)
+
+    elif request.method == "POST":
+        # Retrieve form data
+        updated_thumbnail = request.form['thumbnail']
+        updated_moviename = request.form['moviename']
+        updated_description = request.form['description']
+        updated_rating = float(request.form['rating'])
+
+        # Find the movie to update
+        movie_to_update = None
+        for movie in movies_info["movies"]:
+            if int(movie["id"]) == int(movie_id):
+                movie_to_update = movie
+                break
+
+        # If movie is not found
+        if not movie_to_update:
+            return jsonify({"message": "Movie not found"}), 404
+
         # Update movie data
         movie_to_update['thumbnails'] = updated_thumbnail
         movie_to_update['movie_name'] = updated_moviename
         movie_to_update['brief_description'] = updated_description
         movie_to_update['rating'] = updated_rating
-        
-        # Save updated data to JSON file
-        with open("movies.json", "w") as json_file:
-            json.dump(movies_info, json_file, indent=4)
-        return redirect(url_for('movies'))  
-        
-    return redirect(url_for('movies'))
 
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+        # Write the updated list back to the file
+        with open("movies.json", "w") as movies_file:
+            json.dump(movies_info, movies_file, indent=4)
+           
+
+        # Redirect to the home page or movies list
+        return redirect(url_for('movies', success='true'))
+
+    return render_template('update.html')

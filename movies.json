@@ -4,8 +4,8 @@
             "id": "99",
             "thumbnails": "https://upload.wikimedia.org/wikipedia/en/c/cb/Migration_%282023_film%29.jpg",
             "movie_name": "The Migration",
-            "brief_description": "horror",
-            "rating": "3.7"
+            "brief_description": "Animation",
+            "rating": 3.0
         },
         {
             "id": "8",
@@ -17,16 +17,16 @@
         {
             "id": 55559999999999,
             "thumbnails": "https://example.com/image23.jpg",
-            "movie_name": "wwwwwwww",
-            "brief_description": "wwwwwwwwwwwww",
-            "rating": 4
+            "movie_name": "You",
+            "brief_description": "sohailaaaaaaaaaaa",
+            "rating": 4.0
         },
         {
             "id": 37,
             "thumbnails": "https://example.com/image23.jpg",
-            "movie_name": "hg",
-            "brief_description": "msh far2a ",
-            "rating": 3
+            "movie_name": "inside out 2",
+            "brief_description": "feelings",
+            "rating": 2.0
         }
     ]
 }

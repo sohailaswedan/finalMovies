@@ -1,5 +1,5 @@
 # MOVIES APP
- The Movie App is a dynamic web application designed to provide users with an engaging platform for managing their movie collections. This app allows users to browse, add, update, and delete movies, ensuring an efficient and user-friendly experience for movie enthusiasts. The app  allows  admins to interact with the system based on their permissions.
+ The Movie App is a dynamic web application designed to provide users with an engaging platform for managing their movie collections. This app allows users to browse(view), add, update, and delete movies, ensuring an efficient and user-friendly experience for movie enthusiasts. The app  allows  admins to interact with the system based on their permissions.
 
 
 ## Prerequisites

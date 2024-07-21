@@ -1,5 +1,4 @@
 import json
-from datetime import datetime 
 class User:
     def __init__(self,username,email,date):
         self.username = username
@@ -25,7 +24,6 @@ class User:
             json.dump(data, outfile, indent=4)
 
         return None  
-
 
     def delete_user(self):
         # Load existing user data from file

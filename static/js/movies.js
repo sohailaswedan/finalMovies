@@ -1,7 +1,7 @@
-const userEmail = document.getElementById("email-displayed"); 
-let localEmail = localStorage.getItem("email"); 
-if (localEmail) {
-    userEmail.textContent = "Welcome, " + localEmail; 
+const username = document.getElementById("username-displayed"); 
+let localUsername = localStorage.getItem("userName"); 
+if (localUsername) {
+    username.textContent = "Welcome, " + localUsername; 
 } else {
-    userEmail.textContent = "No email found"; 
+    username.textContent = "No email found"; 
 }

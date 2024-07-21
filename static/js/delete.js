@@ -1,6 +1,6 @@
 function deleteMovie(movieId) {
     fetch(`/delete_movie/${movieId}`, {
-        method: "GET",
+        method: "DELETE",
     })
     .then()
    

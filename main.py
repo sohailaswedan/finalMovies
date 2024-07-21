@@ -3,44 +3,11 @@ import json
 from pythonfile.user import User
 from flask import render_template, request,url_for, session,jsonify,redirect,abort,flash
 from datetime import datetime
-import os
-from werkzeug.utils import secure_filename 
+
 
 app=flask.Flask("main")
 app.secret_key='sohaila'
 admin_emails = ['sohailaswedan45@gmail.com']
-UPLOAD_FOLDER = 'static/uploads'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # Max upload size is 16 MB
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-
-#signup page routing
-@app.route("/signup", methods=['POST','GET'])
-def sign_up():
-    validation_message = None
-    session.pop('email', None)
-    
-    # Handle POST request when user submits sign-up form
-    if request.method == "POST":
-        # Retrieve data from the form
-        username = request.form['username']
-        password = request.form['password']
-        email = request.form['email']
-        date = datetime.now().isoformat()
-        role = 'admin' if email in admin_emails else 'user'
-        
-        # Add user to the database
-        user_instance = User('users.json', email, date)
-        error_message = user_instance.add_user(password, username , role)
-        
-        # If there's  error message, render the sign-up page with the error message
-        if error_message:
-            return render_template('signup.html', validation_message=error_message)
-        # Clear the session
-        session.clear()       
-        # Redirect to the login page after successful sign-up
-        return redirect(url_for('login'))
-    return render_template('signup.html', validation_message=validation_message)
 
 #logOut
 @app.route("/logOut", methods=["POST", "GET"])

@@ -25,19 +25,18 @@ class User:
 
         return None  
 
-    def delete_user(self):
+    #logOut
+    def exit_user(user_email):
         # Load existing user data from file
         with open('users.json', 'r') as infile:
             data = json.load(infile)
 
         # Filter out user with matching email
-        new_data = [user for user in data if user['email'] != self.email]
+        new_data = [user for user in data if user['email'] != user_email]
 
-        #  updated data back to file
+        # Update data back to file
         with open('users.json', 'w') as outfile:
             json.dump(new_data, outfile, indent=4)
-        return None
-        
 
 
    

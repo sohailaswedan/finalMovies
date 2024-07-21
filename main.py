@@ -42,19 +42,19 @@ def sign_up():
         return redirect(url_for('login'))
     return render_template('signup.html', validation_message=validation_message)
 
-#deleteAccount
-@app.route("/deleteAccount", methods=["POST", "GET"])
-def deleteAccount():
+#logOut
+@app.route("/logOut", methods=["POST", "GET"])
+def exitAccount():
     # Check if email exists in the session
     email = session.get('email')
     if email:
         # Delete user from the database
-        User.delete_user()      
+        User.exit_user()      
         # Remove email from the session
         session.pop('email', None)        
         # Clear the session
         session.clear()   
-    return redirect(url_for('sign_up'))    
+    return redirect(url_for('login'))    
 
 #routing to login page
 @app.route("/", methods=["POST", "GET"])
@@ -135,73 +135,7 @@ def delete_movie(movie_id):
     flash("Movie deleted successfully", "success")
     return redirect(url_for('movies'))
 
-    
-# #adding movie
-# @app.route('/add', methods=["GET", "POST"])
-# def add_movie():
-#     with open("movies.json", "r") as json_file:
-#         movies_info= json.load (json_file)
-#     if request.method == "GET":
-#         return render_template("add.html")
-#     if request.method == "POST":
-#         # Retrieve form data
-#         movie_id = request.form['id']
-#         thumbnail = request.files['thumbnails']
-#         moviename = request.form['moviename']
-#         description = request.form['description']
-#         rating = request.form['rating']
-#         # Validation checks
-#         if not movie_id or not thumbnail or not moviename or not description or not rating:
-#             flash("All fields are required", "error")
-#             return redirect(url_for('add_movie'))
-
-#         try:
-#             movie_id = int(movie_id)
-#         except ValueError:
-#             flash("Movie ID must be a number", "error")
-#             return redirect(url_for('add_movie'))
-
-#         try:
-#             rating = int(rating)
-#             if rating < 1 or rating > 4:
-#                 raise ValueError
-#         except ValueError:
-#             flash("Rating must be a positive number from 1 to 4", "error")
-#             return redirect(url_for('add_movie')) 
-#          # Save the thumbnail image
-#         if thumbnail:
-#             filename = secure_filename(thumbnail.filename)
-#             thumbnail.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-#             thumbnail_url = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-#         else:
-#             flash("Thumbnail upload failed", "error")
-#             return redirect(url_for('add_movie'))  
-#         # Create a new movie entry
-#         new_movie = {
-#             'id': movie_id,
-#             'thumbnails': thumbnail_url,
-#             'movie_name': moviename,
-#             'brief_description': description,
-#             'rating': rating
-#         }
-#          # Check for duplicate ID
-#         if any(movie['id'] == new_movie['id'] for movie in movies_info['movies']):
-#             flash("Movie with this ID already exists", "error")
-#             return redirect(url_for('add_movie'))
-
-#         # Add the new movie to the list
-#         movies_info["movies"].append(new_movie)
-
-#         # Write the updated list back to the file
-#         with open("movies.json", "w") as movies_file:
-#             json.dump(movies_info, movies_file, indent=4)
-
-#         # Redirect to the home page
-#         flash("Movie added successfully", "success")
-#         return redirect(url_for('movies'))
-
-#     return render_template('add.html')
-
+#addMovie
 @app.route('/add', methods=["GET", "POST"])
 def add_movie():
     with open("movies.json", "r") as json_file:
@@ -262,10 +196,7 @@ def add_movie():
 
     return render_template('add.html')
 
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
+#updateMovie
 @app.route('/update/<movie_id>', methods=["GET", "POST"])
 def update_movie(movie_id):
     with open("movies.json", "r") as json_file:

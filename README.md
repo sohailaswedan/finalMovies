@@ -5,6 +5,7 @@
 ## Prerequisites
 Did you add any additional modules that someone needs to install (for instance anything in Python that you `pip install-ed`)? 
 List those here (if any).
+pip install
 
 Before running this project, ensure you have the following prerequisites installed:
 

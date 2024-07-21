@@ -9,14 +9,31 @@
 
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class=" btn btn-danger" id="delete-account" href="{{url_for('deleteAccount')}}">Delete My Account </a>
+              </li>
+              <li class="nav-item">
+                <a href = "{{url_for('add_movie')}}" id="addLink" class="btn btn-success" >Add New Movie</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     <div class="home">
         <section class="sec1">
-              <a class="nav-item nav-link btn btn-info delete-account" id="delete-account" href="#">Delete My Account </a>
-              <div class="d-flex  justify-content-center align-items-center"><div id="email-displayed"></div></div>
-            
+              <div class="d-flex  justify-content-center align-items-center"><div id="email-displayed"></div></div>       
         </section>
+        
 
-
+        <div></div>
         <div class="movie-container row row-cols-1 row-cols-md-4 g-3 mt-5">
             {% for movie in movies%}
             <div class="col">
@@ -29,9 +46,8 @@
                     <p class="card-text">{{movie['rating']}}</p>
                 </div> 
                 <div id="user-role" data-role="{{ user_role }}"></div>
-                <a href = "{{url_for('delete_movie',movie_id = movie.id)}}" id="deleteLink"  >Delete</a>
-                <a href = "{{url_for('add_movie')}}" id="addLink" >Add</a>
-                <a href="{{url_for('update_movie',movie_id = movie.id)}}" id="updateLink" >Update</a>
+                <a href = "{{url_for('delete_movie',movie_id = movie.id)}}" id="deleteLink" class="btn btn-danger" >Delete</a>
+                <a href="{{url_for('update_movie',movie_id = movie.id)}}" id="updateLink" class="btn btn-warning">Update</a>
                 </div>
             </div>
             </div>

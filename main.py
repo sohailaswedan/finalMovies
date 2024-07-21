@@ -2,7 +2,7 @@ import flask
 import json
 from pythonfile.user import User
 from flask import render_template, request,url_for, session,jsonify,redirect,abort,flash
-from datetime import datetime
+from datetime import datetime 
 
 app=flask.Flask("main")
 app.secret_key='sohaila'
@@ -52,10 +52,12 @@ def deleteAccount():
 
     # Check if email exists in the session
     email = session.get('email')
+    
 
     if email:
         # Delete user from the database
-        User('users.json', email).delete_user()
+        print("gjlrgfjklf")
+        User.delete_user()
         
         # Remove email from the session
         session.pop('email', None)        
@@ -88,6 +90,7 @@ def login():
             if user['email'] == email and int(user['password']) == int(password):
                 # If match is found, set the email in the session and redirect to the home page
                 session['email'] = email
+      
                 session['role'] = user['role']
                 return redirect(url_for('home'))
 

@@ -6,26 +6,30 @@
     --highlight-color:#FF9500;
     --yellow-bg-color: #FFDA78;
 }
-.btn
-{
-    background-color: #FF9500;
-}
 .movie-image
 {
     width: 100%;
 }
 .sec1
 {
-    background-image: url('/static/images/final.jpg');
-    height: 90vh;
+    background-image: url('/static/images/inside.jpg');
+    height: 100vh;
 }
 #email-displayed
 {
     color: #F2F2F2;
+    background-color: #d37c02;
     font-size: 50px;
     margin-top: 150px;
 }
 .delete-account
 {
     width: 10%;
+    background-color: rgba(120, 16, 16, 0.878);
+    color: white;
+}
+.add-body , .update-body
+{
+    background-image: url('/static/images/inside.jpg');
+    color: azure;
 }

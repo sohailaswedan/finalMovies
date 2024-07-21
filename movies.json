@@ -1,36 +1,29 @@
 {
     "movies": [
         {
-            "id": 23,
-            "thumbnails": "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/you-iemv069926-01-04-2020-15-34-16.jpg",
-            "movie_name": "You",
-            "brief_description": "a serial killer",
-            "rating": 4.0
-        },
-        {
             "id": 24,
             "thumbnails": "https://m.media-amazon.com/images/I/619c+UQZaOL._AC_UF894,1000_QL80_.jpg",
             "movie_name": "The Prestige",
-            "brief_description": "After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.",
+            "brief_description": "After a tragic accident, two stage magicians engage in a battle.",
             "rating": 4.8
         },
         {
             "id": 25,
-            "thumbnails": "https://example.com/image25.jpg",
+            "thumbnails": "https://i.pinimg.com/474x/8b/41/e2/8b41e2f169d86d87aa4c543af61d51b7.jpg",
             "movie_name": "The Social Network",
             "brief_description": "The story of the founding of Facebook and the lawsuits that followed its creation.",
             "rating": 4.7
         },
         {
             "id": "44",
-            "thumbnails": "https://example.com/image77.jpg",
+            "thumbnails": "https://media0050.elcinema.com/uploads/_315x420_fbaa3f5faa7b0f15facd2ca8538040725aed35ded9471e41e65a7998dc0ffa47.jpg",
             "movie_name": "The God Father",
             "brief_description": "adventures",
             "rating": "3.0"
         },
         {
             "id": "5555",
-            "thumbnails": "https://example.com/image39.jpg",
+            "thumbnails": "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
             "movie_name": "friends",
             "brief_description": "Italian",
             "rating": "2.6"
@@ -39,6 +32,13 @@
             "id": "78",
             "thumbnails": "https://example.com/image23.jpg",
             "movie_name": "interstaller",
+            "brief_description": "horror",
+            "rating": "4"
+        },
+        {
+            "id": "55",
+            "thumbnails": "https://example.com/image23.jpg",
+            "movie_name": "YOU",
             "brief_description": "horror",
             "rating": "4"
         }

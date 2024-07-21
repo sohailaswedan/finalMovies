@@ -9,7 +9,7 @@ function deleteMovie(movieId) {
 // Delete account
 const deleteAccount = document.getElementById("delete-account") ; 
 deleteAccount.addEventListener("click", function() {
-    fetch("/deleteAccount", { method: "POST" })
+    fetch(`/deleteAccount/${email}`, { method: "POST" })
         .then(() => {
             // After deleting the account, redirect to the sign-up page
             window.location.href = "/signup"; 

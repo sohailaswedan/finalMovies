@@ -38,11 +38,12 @@ class User:
         print("after filteration")
 
         #  updated data back to file
-        with open(self.filename, 'w') as outfile:
+        with open('users.json', 'w') as outfile:
             json.dump(new_data, outfile, indent=4)
             print("after writing")
 
         return None
+        
 
 
    

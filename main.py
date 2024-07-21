@@ -56,7 +56,6 @@ def deleteAccount():
 
     if email:
         # Delete user from the database
-        print("gjlrgfjklf")
         User.delete_user()
         
         # Remove email from the session
@@ -157,10 +156,7 @@ def add_movie():
         thumbnail = request.form['thumbnail']
         moviename = request.form['moviename']
         description = request.form['description']
-        rating = request.form['rating']
-        
-        
-        
+        rating = request.form['rating']   
         # Create a new movie entry
         new_movie = {
             'id': movie_id,

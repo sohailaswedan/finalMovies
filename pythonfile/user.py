@@ -33,15 +33,11 @@ class User:
             data = json.load(infile)
 
         # Filter out user with matching email
-        print("after opening")
         new_data = [user for user in data if user['email'] != self.email]
-        print("after filteration")
 
         #  updated data back to file
         with open('users.json', 'w') as outfile:
             json.dump(new_data, outfile, indent=4)
-            print("after writing")
-
         return None
         
 

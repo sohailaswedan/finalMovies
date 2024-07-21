@@ -106,25 +106,35 @@ def movies():
     with open("movies.json", "r") as json_file:
         movies_info= json.load (json_file)
     return flask.render_template("index.html", movies=movies_info["movies"])
-                
-#deleteMovie function                
+
 @app.route("/delete_movie/<movie_id>")
 def delete_movie(movie_id):
     mov = None
     with open("movies.json", "r") as json_file:
-        movies_info= json.load (json_file)
-    # Iterate through the list of movies to find the one with the matching ID    
+        movies_info = json.load(json_file)
+    
+    # Iterate through the list of movies to find the one with the matching ID
     for movie in movies_info["movies"]:
         if int(movie["id"]) == int(movie_id):    
             mov = movie
             break
-        # Check if `mov` is still None, meaning no matching movie was found
-        if not mov:
-            return redirect(url_for('movies'))              
-    movies_info["movies"].remove(mov)   
-    with open("movies.json", "w") as json_file:
-        json.dump(movies_info, json_file, indent=4)         
+
+    # Check if `mov` is still None, meaning no matching movie was found
+    if not mov:
+        flash("Movie not found", "error")  # Optional: Display an error message
         return redirect(url_for('movies'))
+
+    # Remove the movie from the list
+    movies_info["movies"].remove(mov)   
+    
+    # Write the updated list back to the file
+    with open("movies.json", "w") as json_file:
+        json.dump(movies_info, json_file, indent=4)
+    
+    # Redirect to the movies page with a success message
+    flash("Movie deleted successfully", "success")
+    return redirect(url_for('movies'))
+
     
 # #adding movie
 # @app.route('/add', methods=["GET", "POST"])
@@ -251,49 +261,6 @@ def add_movie():
         return redirect(url_for('movies'))
 
     return render_template('add.html')
-
-# #update movie
-# @app.route('/update/<movie_id>', methods=["GET", "POST"])
-# def update_movie(movie_id):
-#     with open("movies.json", "r") as json_file:
-#         movies_info = json.load(json_file)
-    
-#     if request.method == "GET":
-#         # Render the update form without pre-filling data
-#         return render_template("update.html",movie_id = movie_id)
-    
-#     elif request.method == "POST":
-#         with open("movies.json", "r") as json_file:
-#             movies_info = json.load(json_file)
-#         # Retrieve form data
-#         updated_thumbnail = request.form['thumbnail']
-#         updated_moviename = request.form['moviename']
-#         updated_description = request.form['description']
-#         updated_rating = float(request.form['rating'])
-        
-#         # Find the movie to update
-#         movie_to_update = None
-#         for movie in movies_info["movies"]:
-#             if int(movie["id"]) == int(movie_id):
-#                 movie_to_update = movie
-#                 break
-        
-#         # If movie is not found
-#         if not movie_to_update:
-#             return jsonify({"message": "Movie not found"}), 404
-        
-#         # Update movie data
-#         movie_to_update['thumbnails'] = updated_thumbnail
-#         movie_to_update['movie_name'] = updated_moviename
-#         movie_to_update['brief_description'] = updated_description
-#         movie_to_update['rating'] = updated_rating
-        
-#         # Save updated data to JSON file
-#         with open("movies.json", "w") as json_file:
-#             json.dump(movies_info, json_file, indent=4)
-#         return redirect(url_for('movies'))  
-        
-#     return redirect(url_for('movies'))
 
 def allowed_file(filename):
     return '.' in filename and \

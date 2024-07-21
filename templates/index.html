@@ -27,6 +27,23 @@
           </div>
         </div>
       </nav>
+      <div class="flash">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Page content -->
+    {% block content %}
+    {% endblock %}
+      </div>
     <div class="home">
         <section class="sec1">
               <div class="d-flex  justify-content-center align-items-center">

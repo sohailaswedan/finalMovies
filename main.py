@@ -2,7 +2,6 @@ import flask
 import json
 from pythonfile.user import User
 from flask import render_template, request,url_for, session,jsonify,redirect,abort,flash
-from datetime import datetime
 
 
 app=flask.Flask("main")

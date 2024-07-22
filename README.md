@@ -10,6 +10,17 @@ Before running this project, ensure you have the following prerequisites install
 - Flask: You can install Flask using pip, Python's package installer. Run the following command:
 ` pip install Flask`
 - Jinja in Visual Studio Code: Ensure you have Visual Studio Code installed. Jinja is a templating engine used by Flask, and it should be integrated into Visual Studio Code by default when you have the Python extension installed.
+
+# # Installation
+-Click on "Code" button.
+-Copy the repository URL (either HTTPS or SSH).
+-Open your terminal (or Command Prompt on Windows).
+-Navigate to the directory where you want to clone the repository.
+-Run the following command, replacing repository_url with the URL you copied:
+    git clone repository_url
+    cd repository_name
+    
+
 ## Project Checklist
 - [x] It is available on GitHub.
 - [x] It uses the Flask web framework.

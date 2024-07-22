@@ -5,7 +5,7 @@
             "thumbnails": "https://upload.wikimedia.org/wikipedia/en/c/cb/Migration_%282023_film%29.jpg",
             "movie_name": "The Migration",
             "brief_description": "a dramatic and poignant film that explores the harrowing journey of a family forced to flee their war-torn homeland in search of safety and a better life. Through their perilous trek across borders and their struggle to adapt in a foreign land, the movie delves into themes of resilience, hope, and the enduring strength of the human spirit.",
-            "rating": "3.7"
+            "rating": 3.0
         },
         {
             "id": "2",
@@ -13,13 +13,6 @@
             "movie_name": "behind her eyes",
             "brief_description": "psychological thriller film that follows the complex and twisted relationships between a single mother, her new boss, and his enigmatic wife. As secrets unravel and boundaries blur, the story delves into themes of manipulation, obsession, and the dark recesses of the human mind, culminating in a shocking and unexpected conclusion.",
             "rating": 4.0
-        },
-        {
-            "id": 3,
-            "thumbnails": "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/you-iemv069926-01-04-2020-15-34-16.jpg",
-            "movie_name": "YOU",
-            "brief_description": "a psychological thriller series that follows Joe Goldberg, a charming but deeply disturbed bookstore manager who becomes obsessively fixated on the women he dates. Using social media and other digital tools to stalk his love interests, Joe manipulates and eliminates anyone who stands in the way of his twisted version of love. As he navigates his dark impulses and troubled past",
-            "rating": 3
         },
         {
             "id": 4,
@@ -48,6 +41,13 @@
             "movie_name": "The Mirage 1",
             "brief_description": "a mind-bending Spanish thriller that intertwines parallel timelines, centered around a mysterious time portal. The story follows Vera, a woman who discovers she can communicate with a young boy living 25 years in the past. Her attempts to prevent his tragic death inadvertently alter the present, leading to unforeseen and dramatic consequences. As Vera races against time to restore her reality and reunite with her family, the film explores themes of fate, love, and the intricate web of cause and effect.",
             "rating": 3.0
+        },
+        {
+            "id": 55559999999999,
+            "thumbnails": "https://upload.wikimedia.org/wikipedia/en/c/cb/Migration_%282023_film%29.jpg",
+            "movie_name": "friends",
+            "brief_description": "a serial killer",
+            "rating": 2
         }
     ]
 }

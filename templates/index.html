@@ -16,7 +16,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav w-50 ms-5 ">
               <li class="nav-item">
                 <a class=" btn btn-danger" id="delete-account" href="{{url_for('deleteAccount')}}">Delete Account </a>
               </li>
@@ -50,13 +50,10 @@
                 <div id="username-displayed" class="fs-1"></div>
               </div>       
         </section>
-        
-
-        <div></div>
-        <div class="movie-container row row-cols-1 row-cols-md-4 g-3 mt-5">
+        <div class="movie-container row row-cols-1 row-cols-md-4 g-4 mt-5 mov">
             {% for movie in movies%}
             <div class="col">
-              <div class="movie_card card width: 18rem;">
+              <div class="movie_card card " >
                 <img src="{{ movie['thumbnails'] }}" alt="{{ movie['thumbnails'] }}" class="movie-image card-img-top " >    
                 <div class="card-body">
                   <div class="movie-details">
@@ -76,8 +73,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="/static/js/movies.js"></script>   
-
-    
+    <script src="/static/js/movies.js"></script> 
 </body>
 </html>

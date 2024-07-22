@@ -7,7 +7,7 @@ class User:
 
     def add_user(self, password, username, role='user'):
     # Load existing user data from file
-        with open('users.json', 'r') as infile:
+        with open('static/json/users.json', 'r') as infile:
             data = json.load(infile)
 
         # Check if email already exists
@@ -20,22 +20,22 @@ class User:
         data.append(new_user)
 
         #  updated data back to file
-        with open('users.json', 'w') as outfile:
+        with open('static/json/users.json', 'w') as outfile:
             json.dump(data, outfile, indent=4)
 
         return None  
 
-    #logOut
+    #Delete User
     def delete_user(user_email):
         # Load existing user data from file
-        with open('users.json', 'r') as infile:
+        with open('static/json/users.json', 'r') as infile:
             data = json.load(infile)
 
         # Filter out user with matching email
         new_data = [user for user in data if user['email'] != user_email]
 
         # Update data back to file
-        with open('users.json', 'w') as outfile:
+        with open('static/json/users.json', 'w') as outfile:
             json.dump(new_data, outfile, indent=4)
 
 

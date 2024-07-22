@@ -1,18 +1,53 @@
 {
     "movies": [
         {
-            "id": "99",
+            "id": "1",
             "thumbnails": "https://upload.wikimedia.org/wikipedia/en/c/cb/Migration_%282023_film%29.jpg",
             "movie_name": "The Migration",
-            "brief_description": "horror",
+            "brief_description": "a dramatic and poignant film that explores the harrowing journey of a family forced to flee their war-torn homeland in search of safety and a better life. Through their perilous trek across borders and their struggle to adapt in a foreign land, the movie delves into themes of resilience, hope, and the enduring strength of the human spirit.",
             "rating": "3.7"
         },
         {
-            "id": "8",
-            "thumbnails": "https://example.com/image55.jpg",
+            "id": "2",
+            "thumbnails": "https://upload.wikimedia.org/wikipedia/en/1/11/Behind_Her_Eyes_TV_series.jpg",
             "movie_name": "behind her eyes",
-            "brief_description": "a serial killer",
+            "brief_description": "psychological thriller film that follows the complex and twisted relationships between a single mother, her new boss, and his enigmatic wife. As secrets unravel and boundaries blur, the story delves into themes of manipulation, obsession, and the dark recesses of the human mind, culminating in a shocking and unexpected conclusion.",
             "rating": 4.0
+        },
+        {
+            "id": 3,
+            "thumbnails": "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/you-iemv069926-01-04-2020-15-34-16.jpg",
+            "movie_name": "YOU",
+            "brief_description": "a psychological thriller series that follows Joe Goldberg, a charming but deeply disturbed bookstore manager who becomes obsessively fixated on the women he dates. Using social media and other digital tools to stalk his love interests, Joe manipulates and eliminates anyone who stands in the way of his twisted version of love. As he navigates his dark impulses and troubled past",
+            "rating": 3
+        },
+        {
+            "id": 4,
+            "thumbnails": "https://c8.alamy.com/comp/2C7WH0B/interstellar-2014-directed-by-christopher-nolan-and-starring-matthew-mcconaughey-anne-hathaway-jessica-chastain-and-john-lithgow-in-a-dystopian-future-astronauts-explore-a-wormhole-in-space-in-search-for-a-new-home-for-mankind-in-a-distant-galaxy-2C7WH0B.jpg",
+            "movie_name": "Interstellar",
+            "brief_description": "a science fiction epic that follows a group of astronauts led by Cooper, a former pilot, as they embark on a daring mission through a wormhole to find a new habitable planet for humanity. With Earth's resources dwindling, the team faces immense challenges and profound existential questions as they traverse distant galaxies, experiencing the wonders and dangers of space. ",
+            "rating": 3
+        },
+        {
+            "id": 5,
+            "thumbnails": "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
+            "movie_name": "Friends",
+            "brief_description": "a heartfelt and nostalgic film that reunites the beloved characters of the iconic TV series Set several years after the show's finale, the movie explores how the lives of Ross, Rachel, Monica, Chandler, Joey, and Phoebe have evolved. As they face new challenges, career changes, and family dynamics, the film delves into themes of friendship, love, and the enduring bonds that keep them together",
+            "rating": 2
+        },
+        {
+            "id": 6,
+            "thumbnails": "https://www.bostonherald.com/wp-content/uploads/migration/2018/09/06/090718NUN9.jpg?w=1024",
+            "movie_name": "The Nun",
+            "brief_description": "a supernatural horror film set in 1952 Romania, where a young nun at a secluded abbey takes her own life. A priest with a haunted past and a novice on the threshold of her final vows are sent by the Vatican to investigate the mysterious death. They uncover the abbey's dark secrets and confront a malevolent force in the form of a demonic nun.",
+            "rating": 1.8
+        },
+        {
+            "id": 7,
+            "thumbnails": "https://image.tmdb.org/t/p/original/mrdeZ550TEgZmQotPakLXwDCD3k.jpg",
+            "movie_name": "The Mirage 1",
+            "brief_description": "a mind-bending Spanish thriller that intertwines parallel timelines, centered around a mysterious time portal. The story follows Vera, a woman who discovers she can communicate with a young boy living 25 years in the past. Her attempts to prevent his tragic death inadvertently alter the present, leading to unforeseen and dramatic consequences. As Vera races against time to restore her reality and reunite with her family, the film explores themes of fate, love, and the intricate web of cause and effect.",
+            "rating": 3.0
         }
     ]
 }

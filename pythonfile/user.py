@@ -26,7 +26,7 @@ class User:
         return None  
 
     #logOut
-    def exit_user(user_email):
+    def delete_user(user_email):
         # Load existing user data from file
         with open('users.json', 'r') as infile:
             data = json.load(infile)

@@ -27,18 +27,11 @@ h2
     width: 40%;
     padding: 20px 0;
 }
-#signup-form , #loginForm
+#loginForm
 {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-#signup-form input 
-{
-    width: 100%;
-    padding: 15px 85px 15px 10px;
-    margin: 4px;
-    border-radius: 7px;
 }
 #loginForm input
 {
@@ -46,10 +39,6 @@ h2
     padding: 15px 35px 15px 10px;
     margin: 4px;
     border-radius: 7px;
-}
-.signup
-{
-    text-align: center;
 }
 .login-link
 {
@@ -67,4 +56,8 @@ input[type="submit"]:hover {
 {
     margin-bottom: 60px;
 }
-
+.warning
+{
+    background-color: red;
+    color: white;
+}

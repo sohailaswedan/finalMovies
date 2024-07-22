@@ -4,13 +4,6 @@
         "password": "4444",
         "username": "salma samy",
         "date": "2024-07-20T14:40:33.671763",
-        "role": "user"
-    },
-    {
-        "email": "sohailaswedan45@gmail.com",
-        "password": "55555",
-        "username": "sohailaswedan",
-        "date": "2024-07-20T14:57:07.460796",
         "role": "admin"
     },
     {
@@ -18,20 +11,14 @@
         "password": "123456789",
         "username": "rollakaram",
         "date": "2024-07-20T17:06:03.755557",
-        "role": "user"
-    },
+        "role": "admin"
+    }
+    ,
     {
-        "email": "yughbhv@fg.com",
-        "password": "333",
+        "email": "sohaila@gmail.com",
+        "password": "1234",
         "username": "sohailaswedan",
-        "date": "2024-07-20T19:30:03.225633",
-        "role": "user"
-    },
-    {
-        "email": "amerayasser2@gmail.com",
-        "password": "1234567",
-        "username": "sohailaswedan",
-        "date": "2024-07-21T12:24:28.981713",
-        "role": "user"
+        "date": "2024-07-20T17:06:03.755557",
+        "role": "admin"
     }
 ]

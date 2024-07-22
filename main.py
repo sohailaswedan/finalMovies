@@ -10,13 +10,13 @@ app.secret_key='sohaila'
 admin_emails = ['sohailaswedan45@gmail.com']
 
 #logOut
-@app.route("/logOut", methods=["POST", "GET"])
-def exitAccount():
+@app.route("/deleteAccount", methods=["POST", "GET"])
+def deleteAccount():
     # Check if email exists in the session
     email = session.get('email')
     if email:
         # Delete user from the database
-        User.exit_user()      
+        User.delete_user(email)      
         # Remove email from the session
         session.pop('email', None)        
         # Clear the session

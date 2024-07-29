@@ -1,5 +1,6 @@
 
 import json
+import re
 from user import User
 from flask import render_template, request,url_for, session,jsonify,redirect,flash
 
@@ -35,14 +36,14 @@ def home():
         return redirect('/')
     with open("static/json/movies.json", "r") as json_file:
         movies_data = json.load(json_file)      
-    return render_template("index.html", movies=movies_data["movies"])
+    return render_template("index.html", movies=movies_data["movies"],filtered_movies = None)
 
 
 
 def movies():
     with open("static/json/movies.json", "r") as json_file:
         movies_info = json.load(json_file)
-    return render_template("index.html", movies=movies_info["movies"])
+    return render_template("index.html", movies=movies_info["movies"],filtered_movies = None)
 
 
 
@@ -76,6 +77,9 @@ def add_movie():
         moviename = request.form['moviename']
         description = request.form['description']
         rating = request.form['rating']
+        if not validate_word_count(description):
+            flash("Description exceeds the maximum word limit of 100 words.", "error")
+            return redirect(url_for('add_movie'))
         if not movie_id or not thumbnail or not moviename or not description or not rating:
             flash("All fields are required", "error")
             return redirect(url_for('add_movie'))
@@ -142,3 +146,27 @@ def update_movie(movie_id):
             json.dump(movies_info, movies_file, indent=4)
         return redirect(url_for('movies', success='true'))
     return render_template('update.html')
+
+def validate_word_count(text, max_words=100):
+    word_count = len(re.findall(r'\b\w+\b', text))
+    return word_count <= max_words
+
+
+def search_movies():
+        with open("static/json/movies.json", "r") as json_file:
+                movies_info = json.load(json_file)
+        if request.method=="POST":
+            query = request.form["query"].lower()
+            if not query:
+                return render_template("index.html", movies=movies_info["movies"],filtered_movies = None)
+            # Filter movies based on the search query
+            filtered_movies = [
+                    movie for movie in movies_info["movies"]
+                    if query in movie["movie_name"].lower()
+                ]
+            return render_template("index.html", movies=movies_info["movies"],filtered_movies = filtered_movies)
+        return render_template("index.html", movies=movies_info["movies"],filtered_movies = None)
+
+
+
+

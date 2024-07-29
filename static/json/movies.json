@@ -43,11 +43,11 @@
             "rating": 3.0
         },
         {
-            "id": 55559999999999,
+            "id": 374,
             "thumbnails": "https://upload.wikimedia.org/wikipedia/en/c/cb/Migration_%282023_film%29.jpg",
-            "movie_name": "friends",
-            "brief_description": "a serial killer",
-            "rating": 2
+            "movie_name": "mrr",
+            "brief_description": "In the heart of a bustling city, where the rhythm of daily life pulses with unrelenting energy, there lies a tranquil garden hidden from the chaotic rush. This secret haven, adorned with vibrant flowers and lush greenery, provides an oasis of calm. Birds chirp melodiously, and the gentle rustle of leaves creates a soothing symphony. Visitors find solace here, escaping the noise and stress of urban existence. As the sun sets, casting a golden glow over the serene landscape, the garden transforms into a magical retreat, where time seems to stand still and worries gently fade away.",
+            "rating": 1.0
         }
     ]
 }

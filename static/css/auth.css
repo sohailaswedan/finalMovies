@@ -37,27 +37,18 @@ h2
 {
     width: 100%;
     padding: 15px 35px 15px 10px;
-    margin: 4px;
+    margin-block: 8px;
     border-radius: 7px;
-}
-.login-link
-{
-    background-color: var(--yellow-bg-color);
-    margin: 30px;
-}
-.login-link a
-{
-    color: chocolate;
 }
 input[type="submit"]:hover {
     background-color: #45a049;
-}
-.login-link
-{
-    margin-bottom: 60px;
 }
 .warning
 {
     background-color: red;
     color: white;
+}
+#loginForm #loginButton
+{
+    margin-bottom: 90px;
 }

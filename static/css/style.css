@@ -1,6 +1,6 @@
 :root
 {
-    --main-bg-color:#2C2C2C;
+    --main-bg-color:#2c2c2cf3;
     --main-text-color:#F2F2F2;
     --secondary-color:#1E1E1E;
     --highlight-color:#FF9500;
@@ -13,7 +13,7 @@
 .sec1
 {
     background-image: url('/static/images/inside.jpg');
-    height: 100vh;
+    height: 50vh;
 }
 #username-displayed
 {
@@ -54,3 +54,97 @@
     width: 95%;
     margin-inline: auto;
 }
+.animation a::after
+{
+    content: "";
+    animation: typing 3s infinite;
+}
+@keyframes typing
+{
+    0%
+    {
+        content: '|';
+    }
+    5%
+    {
+        content: 'm |';
+    }
+    10%
+    {
+        content: 'mo |';
+    }
+    15%
+    {
+        content: 'mov |';
+    }
+    20%
+    {
+        content: 'movi |';
+    }
+    30%
+    {
+        content: 'movie |';
+    }
+    40%
+    {
+        content: 'movies |';
+    }
+    50%
+    {
+        content: 'movie |';
+    }
+    60%
+    {
+        content: 'movi |';
+    }
+    70%
+    {
+        content: 'mov |';
+    }
+    80%
+    {
+        content: 'mo |';
+    }
+    90%
+    {
+        content: 'm |';
+    }
+    100%
+    {
+        content: ' |';
+    }
+}
+.movie_card {
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movie-image {
+    height: 500px; 
+    object-fit: cover;
+}
+
+.card-body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movie-details {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-title, .card-text {
+    margin-bottom: 3px; 
+}
+.card-button
+{
+    width: 45%;
+}
+
+

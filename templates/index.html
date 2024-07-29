@@ -9,24 +9,36 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark">
-        <div class="container-fluid bar">
-          <a class="navbar-brand logo text-white" href="#">Vmovies</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav w-50 ms-5 ">
-              <li class="nav-item">
-                <a class=" btn btn-danger" id="delete-account" href="{{url_for('deleteAccount')}}">Delete Account </a>
-              </li>
-              <li class="nav-item">
-                <a href = "{{url_for('add_movie')}}" id="addLink" class="btn btn-success" >Add New Movie</a>
-              </li>
-            </ul>
-          </div>
+  <nav class="navbar bg-primary sticky-top ">
+    <div class="container-fluid animation">
+        <a class="navbar-brand ps-5 ms-5 text-white fw-bolder fs-2">V</a>
+      <form class="d-flex" role="search" method="post" action="/search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name = "query">
+        <button class="btn btn-outline-success me-5" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  {% if filtered_movies %}
+  <div class="container mt-4">
+    <h1>Search Results</h1>
+    
+        <div class="row">
+            {% for movie in filtered_movies %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ movie.thumbnails }}" class="card-img-top" alt="{{ movie.movie_name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ movie.movie_name }}</h5>
+                            <p class="card-text">{{ movie.brief_description }}</p>
+                            <p class="card-text"><small class="text-muted">Rating: {{ movie.rating }}</small></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-      </nav>
+    
+</div>
+{% endif %}
       <div class="flash">
         {% with messages = get_flashed_messages(with_categories=True) %}
         {% if messages %}
@@ -50,6 +62,10 @@
                 <div id="username-displayed" class="fs-1"></div>
               </div>       
         </section>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <a class=" btn btn-danger" id="delete-account" href="{{url_for('deleteAccount')}}">Delete Account </a>
+          <a href = "{{url_for('add_movie')}}" id="addLink" class="btn btn-success" >Add New Movie</a>
+        </div>
         <div class="movie-container row row-cols-1 row-cols-md-4 g-4 mt-5 mov">
             {% for movie in movies%}
             <div class="col">
@@ -58,12 +74,13 @@
                 <div class="card-body">
                   <div class="movie-details">
                     <h2 class="card-title">{{movie['movie_name']}}</h2>
-                    <p class="card-text">{{movie['brief_description']}}</p>
-                    <p class="card-text">{{movie['rating']}}</p>
+                    <p class="card-text" >{{movie['brief_description']}}</p>
+                    <p class="card-text mt-2">{{movie['rating']}}</p>
                 </div> 
-                <div id="user-role" data-role="{{ user_role }}"></div>
-                <a href = "{{url_for('delete_movie',movie_id = movie.id)}}" id="deleteLink" class="btn btn-danger" >Delete</a>
-                <a href="{{url_for('update_movie',movie_id = movie.id)}}" id="updateLink" class="btn btn-warning">Update</a>
+                <div class="card-buttons d-flex justify-content-around">
+                  <a href = "{{url_for('delete_movie',movie_id = movie.id)}}" id="deleteLink" class="btn btn-danger card-button py-2" >Delete</a>
+                  <a href="{{url_for('update_movie',movie_id = movie.id)}}" id="updateLink" class="btn btn-warning card-button py-2">Update</a>
+                </div>
                 </div>
             </div>
             </div>
@@ -73,6 +90,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="/static/js/movies.js"></script> 
+    <script src="/static/js/movies.js"></script>
+    <script src="/static/js/add.js"></script> 
 </body>
 </html>

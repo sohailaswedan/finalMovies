@@ -16,6 +16,7 @@ app.add_url_rule('/add', 'add_movie', routes.add_movie, methods=['GET', 'POST'])
 app.add_url_rule('/delete_movie/<movie_id>', 'delete_movie', routes.delete_movie)
 app.add_url_rule('/movies', 'movies', routes.movies)
 app.add_url_rule('/deleteAccount', 'deleteAccount', routes.deleteAccount, methods=['POST', 'GET'])
+app.add_url_rule('/search', 'search_movies', routes.search_movies, methods=['POST'])
 
 if __name__ == "__main__":
     app.run(debug=True)
